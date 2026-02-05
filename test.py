@@ -1801,13 +1801,16 @@ def main():
         st.json(audit)
         
         # Download button
+    json_data = json.dumps(make_json_safe(comprehensive_audit), indent=2)
+
     st.download_button(
         label="📥 Download Audit Report",
-        data=json.dumps(make_json_safe(comprehensive_audit), indent=2)
+        data=json_data,
         file_name=f"audit_report_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
         mime="application/json",
         use_container_width=True
     )
+
 
     
     # =========================================================
