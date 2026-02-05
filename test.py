@@ -1369,11 +1369,9 @@ def main():
         col4, col5, col6 = st.columns(3)
         
         with col4:
-            ui_metric_card(
-                "Mean Confidence",
-                f"{mean_conf:.3f}",
-                subtitle="Average model certainty"
-            )
+            st.metric("Mean Confidence", f"{mean_conf:.3f}")
+
+            
         
         with col5:
             ui_metric_card(
