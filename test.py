@@ -796,6 +796,33 @@ def init_session_state():
 
 init_session_state()
 
+
+
+
+def make_json_safe(obj):
+    import numpy as np
+    import pandas as pd
+
+    if isinstance(obj, dict):
+        return {k: make_json_safe(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [make_json_safe(v) for v in obj]
+    elif isinstance(obj, tuple):
+        return [make_json_safe(v) for v in obj]
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, (np.integer,)):
+        return int(obj)
+    elif isinstance(obj, (np.floating,)):
+        return float(obj)
+    elif isinstance(obj, pd.Timestamp):
+        return obj.isoformat()
+    else:
+        return obj
+
+
+
+
 # =========================================================
 # LOAD INFERENCE ENGINE
 # =========================================================
@@ -1757,7 +1784,7 @@ def main():
         audit_path = f"audit_logs/audit_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json"
         
         with open(audit_path, "w") as f:
-            json.dump(audit, f, indent=2)
+            json.dump(make_json_safe(audit), f, indent=2)
         
         st.markdown(f"""
         <div class="ui-card card-success">
@@ -1776,7 +1803,7 @@ def main():
         # Download button
         st.download_button(
             label="📥 Download Audit Report",
-            data=json.dumps(audit, indent=2),
+            data = json.dumps(make_json_safe(comprehensive_audit), indent=2),
             file_name=f"audit_report_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
             mime="application/json",
             use_container_width=True
@@ -2149,7 +2176,8 @@ def main():
         report_path = f"audit_logs/comprehensive_audit_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json"
         
         with open(report_path, "w") as f:
-            json.dump(comprehensive_audit, f, indent=2)
+            json.dump(make_json_safe(comprehensive_audit), f, indent=2)
+
         
         st.success(f"✓ Comprehensive audit report saved to: `{report_path}`")
         
@@ -2162,7 +2190,7 @@ def main():
         with col1:
             st.download_button(
                 label="📥 Download JSON Report",
-                data=json.dumps(comprehensive_audit, indent=2),
+                data=json.dump(make_json_safe(audit), f, indent=2),
                 file_name=f"comprehensive_audit_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
                 mime="application/json",
                 use_container_width=True
