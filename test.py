@@ -1801,13 +1801,14 @@ def main():
         st.json(audit)
         
         # Download button
-        st.download_button(
-            label="📥 Download Audit Report",
-            data = json.dumps(make_json_safe(comprehensive_audit), indent=2)
-            file_name=f"audit_report_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
-            mime="application/json",
-            use_container_width=True
-        )
+    st.download_button(
+        label="📥 Download Audit Report",
+        data=json.dumps(make_json_safe(comprehensive_audit), indent=2),
+        file_name=f"audit_report_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
+        mime="application/json",
+        use_container_width=True
+    )
+
     
     # =========================================================
     # TAB 6: CONFIDENCE & ENTROPY
@@ -2188,9 +2189,11 @@ def main():
         col1, col2 = st.columns(2)
         
         with col1:
+            json_data = json.dumps(make_json_safe(audit), indent=2)
+
             st.download_button(
                 label="📥 Download JSON Report",
-                data=json.dump(make_json_safe(audit), f, indent=2),
+                data=json_data,
                 file_name=f"comprehensive_audit_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
                 mime="application/json",
                 use_container_width=True
