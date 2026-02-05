@@ -1133,6 +1133,7 @@ def drift_severity(value, low, high):
 # =========================================================
 def main():
     # Render header
+    comprehensive_audit = None
     ui_header()
     
     # System alert banner
@@ -1801,15 +1802,19 @@ def main():
         st.json(audit)
         
         # Download button
-    json_data = json.dumps(make_json_safe(comprehensive_audit), indent=2)
+    if comprehensive_audit is not None:
+        json_data = json.dumps(make_json_safe(comprehensive_audit), indent=2)
 
-    st.download_button(
-        label="📥 Download Audit Report",
-        data=json_data,
-        file_name=f"audit_report_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
-        mime="application/json",
-        use_container_width=True
-    )
+        st.download_button(
+            label="📥 Download Audit Report",
+            data=json_data,
+            file_name=f"audit_report_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.json",
+            mime="application/json",
+            use_container_width=True
+        )
+    else:
+        st.info("Run the audit to generate a report.")
+
 
 
     
