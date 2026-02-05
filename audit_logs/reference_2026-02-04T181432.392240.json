@@ -1,0 +1,9 @@
+{
+  "reason": "stable_update",
+  "old_reference_id": 2543046183024,
+  "new_reference_id": 2543040927280,
+  "metrics": null,
+  "strategy": "freeze",
+  "timestamp": "2026-02-04T18:14:32.392240",
+  "id": "f98311cd-0373-4669-a32c-8c37db948adf"
+}

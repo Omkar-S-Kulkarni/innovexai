@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-05T08:44:53.874605",
+  "kl_divergence": 0.024385506921592276,
+  "psi": 0.030301766330808066,
+  "wasserstein": 0.003888035902241906,
+  "mean_confidence": 0.9243218022855275,
+  "mean_entropy": 0.19169212024234497,
+  "window_size": 200,
+  "reference_size": 128,
+  "total_predictions": 400,
+  "labels_used": false,
+  "retraining": false,
+  "failure_type": "Healthy / Stable",
+  "severity": "\ud83d\udfe2 Low"
+}

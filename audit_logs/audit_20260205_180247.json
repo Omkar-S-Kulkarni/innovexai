@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-02-05T18:02:47.971894",
+  "kl_divergence": 0.05450298971917024,
+  "psi": 0.07594489937326772,
+  "wasserstein": 0.011409975474475278,
+  "composite_score": 1.1357703571384004,
+  "window_size": 464,
+  "reference_size": 389,
+  "labels_used": false,
+  "retraining": false,
+  "failure_type": "Healthy / Stable",
+  "drift_regimes": {
+    "gradual": false,
+    "sudden": false,
+    "oscillatory": false,
+    "localized": {
+      "confidence>0.7": false,
+      "auto_cluster_1": false
+    }
+  }
+}

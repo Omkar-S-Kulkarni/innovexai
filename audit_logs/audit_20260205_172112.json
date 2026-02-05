@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-05T17:21:12.018850",
+  "kl_divergence": 0.06309608072558746,
+  "psi": 0.0911586716225327,
+  "wasserstein": 0.013234473170062717,
+  "window_size": 479,
+  "reference_size": 360,
+  "labels_used": false,
+  "retraining": false
+}

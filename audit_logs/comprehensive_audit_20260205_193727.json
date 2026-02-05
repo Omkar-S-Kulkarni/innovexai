@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "report_generated": "2026-02-05T19:37:27.109275",
+    "report_version": "1.0.0",
+    "system_version": "Silent Drift Monitor v1.0"
+  },
+  "model_info": {
+    "engine": "StreamingInferenceEngine",
+    "monitoring_mode": "Output-Only",
+    "label_free": true
+  },
+  "current_metrics": {
+    "drift_scores": {
+      "kl_divergence": 0.024385506921592276,
+      "psi": 0.030301766330808066,
+      "wasserstein": 0.003888035902241906,
+      "composite_score": 0.3368021009617664
+    },
+    "confidence_metrics": {
+      "mean_confidence": 0.9161591851679346,
+      "confidence_variance": 0.014690058116487461,
+      "low_confidence_mass": 0.0
+    },
+    "entropy_metrics": {
+      "mean_entropy": 0.20277581214783133,
+      "entropy_slope": -0.00012638326181225068,
+      "entropy_shock_detected": false
+    }
+  },
+  "system_configuration": {
+    "window_size": 200,
+    "reference_size": 200,
+    "sensitivity": 5,
+    "weights": {
+      "output": 0.4,
+      "confidence": 0.2,
+      "entropy": 0.2,
+      "stability": 0.2
+    }
+  },
+  "slice_analysis": {
+    "total_slices": 1,
+    "slice_metrics": {
+      "confidence>0.7": {
+        "kl_divergence": 1.2691696314309653,
+        "psi": 1.3659099237634895,
+        "wasserstein": 0.025094552548110053,
+        "mean_confidence": 0.9471695708581025,
+        "slice_size": 181,
+        "entropy": 0.0
+      }
+    }
+  },
+  "alerts": {
+    "active_count": 0,
+    "alerts": []
+  },
+  "compliance": {
+    "labels_used": false,
+    "retraining_performed": false,
+    "blocking_actions": false,
+    "audit_trail_maintained": true
+  },
+  "recommendations": [
+    "Continue monitoring slice-level metrics",
+    "Review reference window update strategy",
+    "Investigate high-drift features",
+    "Maintain current sensitivity settings"
+  ]
+}

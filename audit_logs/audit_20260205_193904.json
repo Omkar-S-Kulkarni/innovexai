@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-05T19:39:04.897674",
+  "model_info": {
+    "engine": "StreamingInferenceEngine",
+    "version": "1.0.0"
+  },
+  "metrics": {
+    "kl_divergence": 0.06709507982949664,
+    "psi": 0.09936196693599944,
+    "wasserstein": 0.013869694939970596,
+    "composite_score": 0.6163433858162032,
+    "mean_confidence": 0.932894329920254,
+    "mean_entropy": 0.14626571051827017
+  },
+  "configuration": {
+    "window_size": 343,
+    "reference_size": 222,
+    "sensitivity": 5
+  },
+  "compliance": {
+    "labels_used": false,
+    "retraining_performed": false,
+    "blocking_actions": false
+  },
+  "alerts": []
+}

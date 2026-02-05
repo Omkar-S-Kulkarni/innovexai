@@ -1,0 +1,14 @@
+{
+  "reason": "freeze_on_drift",
+  "old_reference_id": 2216906137392,
+  "new_reference_id": null,
+  "metrics": {
+    "kl": 0.3846688815325738,
+    "psi": 0.1116532297586202,
+    "low_conf_mass": 0.0,
+    "entropy_slope": 0.0003338817176340675
+  },
+  "strategy": "freeze",
+  "timestamp": "2026-02-05T18:26:26.745085",
+  "id": "0f83ea49-a818-46c7-b037-d778582fc87f"
+}

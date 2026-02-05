@@ -1,0 +1,20 @@
+{
+    "model_type": "LogisticRegression",
+    "training_fraction": 0.25,
+    "training_sample_count": 375,
+    "training_time_range": {
+        "start_timestamp": 0,
+        "end_timestamp": 374
+    },
+    "feature_list": [
+        "time",
+        "feature_1_activity_score",
+        "feature_2_reliability",
+        "feature_3_complexity",
+        "feature_4_temporal_behavior",
+        "feature_5_interaction_depth",
+        "feature_6_variability"
+    ],
+    "random_state": 42,
+    "retraining_allowed": false
+}

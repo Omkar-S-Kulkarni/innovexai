@@ -1,0 +1,9 @@
+{
+  "reason": "cold_start",
+  "old_reference_id": null,
+  "new_reference_id": 2543041662096,
+  "metrics": null,
+  "strategy": "freeze",
+  "timestamp": "2026-02-04T18:13:23.545813",
+  "id": "7b25c77e-0371-4503-8059-16dcf57df61c"
+}
