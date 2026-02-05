@@ -1345,8 +1345,8 @@ def main():
                 "System Status",
                 "Healthy",
                 subtitle="No blocking actions required",
-                pill="pill-green",
-                trend={'direction': 'stable', 'value': '0%'}
+                pill="pill-green"
+                
             )
         
         with col2:
@@ -1376,15 +1376,13 @@ def main():
         with col5:
             ui_metric_card(
                 "Mean Entropy",
-                f"{mean_entropy:.3f}",
-                subtitle="Prediction uncertainty"
+                f"{mean_entropy:.3f}"
             )
         
         with col6:
             ui_metric_card(
                 "Low-Conf Mass",
-                f"{low_conf_mass:.1%}",
-                subtitle="Uncertain predictions"
+                f"{low_conf_mass:.1%}"
             )
         
         # Predictions Timeline
