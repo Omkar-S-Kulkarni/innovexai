@@ -7,13 +7,19 @@ import json
 import joblib
 import numpy as np
 import pandas as pd
+import os
 
 # ------------------------------------------------------------
 # CONFIG
 # ------------------------------------------------------------
-DATA_PATH = "D:\innovexai\data\dataset.csv"
-MODEL_PATH = "D:\innovexai\model\model.pkl"
-METADATA_PATH = "D:\innovexai\model\model_metadata.json"
+# ------------------------------------------------------------
+# CONFIG — CLOUD SAFE PATHS
+# ------------------------------------------------------------
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATA_PATH = os.path.join(BASE_DIR, "data", "dataset.csv")
+MODEL_PATH = os.path.join(BASE_DIR, "model", "model.pkl")
+METADATA_PATH = os.path.join(BASE_DIR, "model", "model_metadata.json")
 
 # ------------------------------------------------------------
 # UTILITY FUNCTIONS
@@ -43,8 +49,16 @@ class StreamingInferenceEngine:
 
     def __init__(self):
         # Load frozen model ONCE
+        # Verify required files exist
+        if not os.path.exists(MODEL_PATH):
+            raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
+        if not os.path.exists(METADATA_PATH):
+            raise FileNotFoundError(f"Metadata file not found: {METADATA_PATH}")
+        if not os.path.exists(DATA_PATH):
+            raise FileNotFoundError(f"Data file not found: {DATA_PATH}")
+
+        # Load frozen model ONCE
         self.model = joblib.load(MODEL_PATH)
-        self.model = joblib.load("D:\innovexai\model\model.pkl")
 
 
         # Load metadata for feature order validation
