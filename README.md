@@ -174,9 +174,12 @@ alert engine
 
 How to Run Locally
 git clone <https://github.com/Omkar-S-Kulkarni/innovexai.git>
+
 cd innovexai
+
 pip install -r requirements.txt
-streamlit run app.py
+
+streamlit run test.py
 
 
 Deployment
