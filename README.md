@@ -173,6 +173,7 @@ rolling reference
 alert engine
 
 How to Run Locally
+
 git clone <https://github.com/Omkar-S-Kulkarni/innovexai.git>
 
 cd innovexai
